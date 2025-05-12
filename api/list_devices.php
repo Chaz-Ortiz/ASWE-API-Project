@@ -9,7 +9,8 @@ while ($data=$result->fetch_array(MYSQLI_ASSOC))//BUILD the devices array
 	$devices[$data['auto_id']]=$data['name'];//use the auto id to bind to the corresponding name
 }
 // add the data for all devices
-$devices[]="All Devices";
+if (isset($_REQUEST['action']) && $_REQUEST['action']=="search")
+	$devices[]="All Devices";
 // log successful call to endpoint
 //log_activity($endPoint,$_SERVER['REMOTE_ADDR'],"none");
 // build the json payload

@@ -41,7 +41,7 @@
                 <ul class="nav navbar-nav navbar-nav-first">
                     <li><a href="index.php" class="smoothScroll">Home</a></li>
                     <li><a href="search-prof.php" class="smoothScroll">Search Equipment</a></li>
-                    <li><a href="add.php" class="smoothScroll">Add Equipment</a></li>
+                    <li><a href="add-prof.php" class="smoothScroll">Add Equipment</a></li>
                 </ul>
             </div>
         </div>
@@ -60,9 +60,9 @@
 // -------- Display the 3 selection buttons:
 			if (!isset($_GET['type'])) {
 				echo '<h2>Select what you want to add:</h2>';
-				echo '<a class="btn btn-primary" href="add.php?type=device">Add New Equipment</a> ';
-				echo '<a class="btn btn-primary" href="add.php?type=type">Add New Device Type</a> ';
-				echo '<a class="btn btn-primary" href="add.php?type=manufacturer">Add New Manufacturer</a> ';
+				echo '<a class="btn btn-primary" href="add-prof.php?type=device">Add New Equipment</a> ';
+				echo '<a class="btn btn-primary" href="add-prof.php?type=type">Add New Device Type</a> ';
+				echo '<a class="btn btn-primary" href="add-prof.php?type=manufacturer">Add New Manufacturer</a> ';
 
 // -------- if the "Add New Manufacturer" button is selected
 			} else if ($_GET['type'] == 'manufacturer') {
@@ -72,12 +72,12 @@
 
 				// Basic validation
 				if (empty($manufacturer)) {
-					redirect("add.php?type=manufacturer&msg=EmptyManufacturer");
+					redirect("add-prof.php?type=manufacturer&msg=EmptyManufacturer");
 				}
 
 				// Validate the name to ensure only alphabet letters and spaces
 				if (!isValidName($manufacturer)) {
-					redirect("add.php?type=manufacturer&msg=InvalidDeviceTypeName");
+					redirect("add-prof.php?type=manufacturer&msg=InvalidDeviceTypeName");
 				}
 
 				// Check if manufacturer already exists in manu_types
@@ -85,14 +85,14 @@
 				$rst = $dblink->query($sql) or die("<p>Error checking manufacturer:<br>$sql<br>".$dblink->error);
 
 				if ($rst->num_rows > 0) {
-					redirect("add.php?type=manufacturer&msg=ManufacturerExists");
+					redirect("add-prof.php?type=manufacturer&msg=ManufacturerExists");
 				}
 
 				// Insert new manufacturer
 				$sql = "INSERT INTO `manu_types` (`name`, `status`) VALUES ('$manufacturer', 'active')";
 				$dblink->query($sql) or die("<p>Error inserting manufacturer:<br>$sql<br>".$dblink->error);
 
-				redirect("add.php?type=manufacturer&msg=ManufacturerAdded");
+				redirect("add-prof.php?type=manufacturer&msg=ManufacturerAdded");
 			}
 
 			// Show form and banner (this runs if form hasn't been submitted yet or redirect returned user here)
@@ -101,7 +101,7 @@
 			}
 
 			echo '<h3>Add New Manufacturer</h3>';
-			echo '<form method="POST" action="add.php?type=manufacturer">';
+			echo '<form method="POST" action="add-prof.php?type=manufacturer">';
 			echo '<div class="form-group">';
 			echo '<label for="manufacturer">Manufacturer Name</label>';
 			echo '<input type="text" name="manufacturer" class="form-control" required>';
@@ -116,24 +116,24 @@
 				$name = trim($_POST['devicetype']);
 
 				if (empty($name)) {
-					redirect("add.php?type=type&msg=NameRequired");
+					redirect("add-prof.php?type=type&msg=NameRequired");
 				}
 
 				if (!isValidName($name)) {
-					redirect("add.php?type=type&msg=InvalidDeviceTypeName");
+					redirect("add-prof.php?type=type&msg=InvalidDeviceTypeName");
 				}
 
 				$sql = "SELECT * FROM `device_types` WHERE `name` = '$name'";
 				$rst = $dblink->query($sql) or die("<p>Error checking device type:<br>$sql<br>" . $dblink->error);
 
 				if ($rst->num_rows > 0) {
-					redirect("add.php?type=type&msg=DeviceTypeExists");
+					redirect("add-prof.php?type=type&msg=DeviceTypeExists");
 				}
 
 				$sql = "INSERT INTO `device_types` (`name`, `status`) VALUES ('$name', 'active')";
 				$dblink->query($sql) or die("<p>Error inserting device type:<br>$sql<br>" . $dblink->error);
 
-				redirect("add.php?msg=DeviceTypeAdded");
+				redirect("add-prof.php?msg=DeviceTypeAdded");
 			}
 
 			// Show form
@@ -142,7 +142,7 @@
 			}
 
 			echo '<h3>Add New Device Type</h3>';
-			echo '<form method="POST" action="add.php?type=type">';
+			echo '<form method="POST" action="add-prof.php?type=type">';
 			echo '<div class="form-group">';
 			echo '<label for="devicetype">Device Type Name</label>';
 			echo '<input type="text" name="devicetype" class="form-control" required>';
@@ -161,7 +161,7 @@
 
 					// Check serial number validity
 					if (!isValidSerialNumber($serialNumber)) {
-						redirect("add.php?action=addequipment&msg=InvalidSerial");
+						redirect("add-prof.php?action=addequipment&msg=InvalidSerial");
 					}
 
 					// Check if the serial number already exists
@@ -176,7 +176,7 @@
 
 						redirect("index.php?msg=EquipmentAdded");
 					} else {
-						redirect("add.php?msg=DeviceExists");
+						redirect("add-prof.php?msg=DeviceExists");
 					}
 				}
 
@@ -213,7 +213,7 @@
 					}
 
 					echo '<h3>Add New Equipment</h3>';
-					echo '<form method="POST" action="add.php?type=device">';
+					echo '<form method="POST" action="add-prof.php?type=device">';
 
 					echo '<div class="form-group">';
 					echo '<label for="device">Device Type</label>';

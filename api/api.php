@@ -37,12 +37,29 @@ switch($endPoint)
 	case "list_devices":
         include("list_devices.php");
         break;
-	case "add equipment":
+	case "list_manufacturers":
+        include("list_manufacturers.php");
+        break;	
+	case "add_equipment":
 		include ("add_equipment.php");
 		break;
 	case "add_device_type":
+		include("add_device_type.php");
 		break;
-	case "add_manu_type":
+	case "add_manufacturer":
+		include("add_manufacturer.php");
+		break;
+	case "search_by_device":
+		include("search_by_device.php");
+		break;	
+	case "search_by_manufacturer":
+		include("search_by_manufacturer.php");
+		break;	
+	case "search_by_serial":
+		include("search_by_serial.php");
+		break;		
+	case "search_all":
+		include("search_all.php");
 		break;
     default:
         //header('Content-Type: application/json');

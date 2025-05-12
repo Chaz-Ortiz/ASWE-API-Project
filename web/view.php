@@ -64,8 +64,19 @@
 						$checkStatusSql = "SELECT 1 FROM `device_status_inactive` WHERE `device_id` = '".$info['auto_id']."'";
 						$checkStatusResult = $dblink->query($checkStatusSql);
 						$status = ($checkStatusResult->num_rows > 0) ? "Inactive" : "Active";
-
 						echo '<p>Device Status: <b>'.$status.'</b></p>';
+						
+						// Check if device type is inactive
+						$checkTypeStatusSql = "SELECT 1 FROM `device_type_inactive` WHERE `device_type` = '".$info['device_type']."'";
+						$checkTypeStatusResult = $dblink->query($checkTypeStatusSql);
+						$typeStatus = ($checkTypeStatusResult->num_rows > 0) ? "Inactive" : "Active";
+						echo '<p>Device Type Status: <b>'.$typeStatus.'</b></p>';
+						
+						// Check if manufacturer is inactive
+						$checkManufacturerStatusSql = "SELECT 1 FROM `device_manufacturer_inactive` WHERE `device_manufacturer` = '".$info['manufacturer']."'";
+						$checkManufacturerStatusResult = $dblink->query($checkManufacturerStatusSql);
+						$manufacturerStatus = ($checkManufacturerStatusResult->num_rows > 0) ? "Inactive" : "Active";
+						echo '<p>Device Manufacturer Status: <b>'.$manufacturerStatus.'</b></p>';
 
                         echo '<p><a class="btn btn-success" href="modify.php?eid='.$info['auto_id'].'">Modify</a></p>';
                         ?>
