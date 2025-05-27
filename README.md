@@ -84,10 +84,5 @@ Ensure the following are installed and properly configured:
    - `/web/includes/db_connection.php` *(or similar file)*
    - `/API/config/db.php`
 
-### Running Locally
-
-```bash
-cd web/
-php -S localhost:8000
 
 
