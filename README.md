@@ -57,10 +57,11 @@ The backend is a custom-built RESTful API written in PHP, designed to handle all
 
 ## 📸 Screenshots
 
-<!-- Replace with actual screenshots from your project -->
-![Homepage](screenshots/homepage.png)
-![Search Results](screenshots/search-results.png)
-![Add Equipment Form](screenshots/add-form.png)
+![Search by Manufacturer - local](https://github.com/user-attachments/assets/6042c7d3-2739-46ec-afff-5d9a66a2aad1)
+![Modify Device - local](https://github.com/user-attachments/assets/bc25d8ca-572a-4d22-9424-25db7c6d74e3)
+![Add Equipment - local](https://github.com/user-attachments/assets/90e77312-6ff0-4d67-a0fa-fe173a64e0ff)
+
+
 
 ---
 
