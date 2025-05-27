@@ -1,6 +1,92 @@
-URL:
-https://ec2-3-145-77-233.us-east-2.compute.amazonaws.com/web/
+# Inventory Management Website and RESTful API
 
-Database Schema:
-![WebPages_DatabaseSchema](https://github.com/user-attachments/assets/6ed7e498-47dc-46cc-a09e-3c080693ce69)
+This project is a full-stack **Inventory Management System**, consisting of a responsive web interface and a RESTful API. It is designed for internal use within an organization to help staff efficiently **track, search, and manage inventory assets** such as devices and equipment.
+
+Built using **HTML/CSS/JavaScript, PHP, and MySQL**, the project is split into two core directories:
+
+- `/web` — the front-end website used by staff
+- `/API` — the back-end API used by the website and potentially other internal services
+
+---
+
+
+---
+
+## 🌐 Website Features (`/web`)
+
+The web interface provides an intuitive platform for non-technical users to interact with the database without direct SQL access.
+
+### 🔍 Search Equipment
+
+- Search inventory records by device type, manufacturer, or serial number
+- DataTable integration for sorting, searching, and pagination
+- Filters out inactive devices automatically
+
+### ➕ Add Equipment
+
+- Input forms to add new devices to the database
+- Validates entries before submission
+- Auto-connects to the API for secure data insertion
+
+### 🧾 Responsive Design
+
+- Bootstrap-based layout with mobile-friendly design
+- Navigation bar for easy access to all tools
+
+---
+
+## 🔌 API Features (`/API`)
+
+The backend is a custom-built RESTful API written in PHP, designed to handle all database operations securely and modularly.
+
+### Endpoints Overview
+
+- **GET /device/get.php** – Fetch all active devices or by specific criteria
+- **POST /device/add.php** – Add new inventory items
+- **PUT /device/update.php** – Update existing device details
+- **DELETE /device/delete.php** – Mark a device as inactive or delete from system
+
+### Core Design Principles
+
+- **Modular endpoint design** with gateway routing
+- **Security-first approach**: prepared statements, input sanitization
+- **MySQL backend** using PDO or MySQLi (depending on your configuration)
+- **Cross-origin headers** for broader access support (if needed internally)
+
+---
+
+## 📸 Screenshots
+
+<!-- Replace with actual screenshots from your project -->
+![Homepage](screenshots/homepage.png)
+![Search Results](screenshots/search-results.png)
+![Add Equipment Form](screenshots/add-form.png)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure the following are installed and properly configured:
+
+- [PHP 7.4+](https://www.php.net/)
+- [MySQL 5.7+](https://www.mysql.com/)
+- [Apache or Nginx](https://httpd.apache.org/) (with PHP module enabled)
+- [phpMyAdmin (optional)](https://www.phpmyadmin.net/) for database administration
+
+### Database Setup
+
+1. Create a new MySQL database (e.g., `inventory_db`)
+2. Import the provided `inventory_schema.sql` file (if available)
+3. Ensure your database credentials are set in both:
+   - `/web/includes/db_connection.php` *(or similar file)*
+   - `/API/config/db.php`
+
+### Running Locally
+
+```bash
+cd web/
+php -S localhost:8000
+
 
