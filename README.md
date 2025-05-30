@@ -4,8 +4,8 @@ This project is a full-stack **Inventory Management System**, consisting of a re
 
 Built using **HTML/CSS/JavaScript, PHP, and MySQL**, the project is split into two core directories:
 
-- `/web` — the front-end website used by staff
-- `/API` — the back-end API used by the website and potentially other internal services
+- `/web` — the front-end website for users
+- `/API` — the back-end API used by the website and other services
 
 ---
 
