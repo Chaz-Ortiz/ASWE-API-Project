@@ -12,6 +12,11 @@ Built using **HTML/CSS/JavaScript, PHP, and MySQL**, the project is split into t
 
 ---
 
+## 🌍 Live Demo
+
+You can explore the running version of the project here:  
+🔗 [Visit the Website](https://ec2-3-145-77-233.us-east-2.compute.amazonaws.com/web/index.php)
+
 ## 🌐 Website Features (`/web`)
 
 The web interface provides an intuitive platform for non-technical users to interact with the database without direct SQL access.
