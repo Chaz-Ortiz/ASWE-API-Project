@@ -86,6 +86,11 @@ Ensure the following are installed and properly configured on your server or dev
    git clone https://github.com/your-username/inventory-management-system.git
    cd inventory-management-system
 
+---
 
+## 🧑‍💻 Author
+
+**Chaz Ortiz**
+[GitHub](https://github.com/Chaz-Ortiz) · [LinkedIn](https://www.linkedin.com/in/chaz-ortiz-615863270/) 
 
 
