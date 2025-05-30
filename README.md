@@ -74,20 +74,20 @@ The backend is a custom-built RESTful API written in PHP, designed to handle all
 
 ### Prerequisites
 
-Ensure the following are installed and properly configured:
+Ensure the following are installed and properly configured on your server or development machine:
 
 - [PHP 7.4+](https://www.php.net/)
 - [MySQL 5.7+](https://www.mysql.com/)
-- [Apache or Nginx](https://httpd.apache.org/) (with PHP module enabled)
-- [phpMyAdmin (optional)](https://www.phpmyadmin.net/) for database administration
+- [Nginx](https://www.nginx.com/)
+- [phpMyAdmin](https://www.phpmyadmin.net/) (optional, for database administration)
 
-### Database Setup
+### Setup
 
-1. Create a new MySQL database (e.g., `inventory_db`)
-2. Import the provided `inventory_schema.sql` file (if available)
-3. Ensure your database credentials are set in both:
-   - `/web/includes/db_connection.php` *(or similar file)*
-   - `/API/config/db.php`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/inventory-management-system.git
+   cd inventory-management-system
+
 
 
 
