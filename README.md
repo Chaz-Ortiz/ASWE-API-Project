@@ -19,7 +19,7 @@ You can explore the running version of the project here:
 
 ## 🌐 Website Features (`/web`)
 
-The web interface provides an intuitive platform for non-technical users to interact with the database without direct SQL access.
+The web interface provides a platform for users to interact with the database without direct SQL access.
 
 ### 🔍 Search Equipment
 
@@ -31,7 +31,6 @@ The web interface provides an intuitive platform for non-technical users to inte
 
 - Input forms to add new devices to the database
 - Validates entries before submission
-- Auto-connects to the API for secure data insertion
 
 ### 🧾 Responsive Design
 
@@ -55,8 +54,7 @@ The backend is a custom-built RESTful API written in PHP, designed to handle all
 
 - **Modular endpoint design** with gateway routing
 - **Security-first approach**: prepared statements, input sanitization
-- **MySQL backend** using PDO or MySQLi (depending on your configuration)
-- **Cross-origin headers** for broader access support (if needed internally)
+- **MySQL backend** using MySQLi 
 
 ---
 
